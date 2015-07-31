@@ -1,10 +1,12 @@
 function OnLoad()
  PrintChat("AB-AMY:단축키설정이 완료되었습니다. 쉬프트를 눌러 확인해주세요")
- 
+
  menu = scriptConfig("Hotkey Changer ", "HC")
 
  menu:addParam("allowCH", "Allow change Display Hotkey", SCRIPT_PARAM_ONOFF, true)
 end
+
+ if allowCH then
 
 Keys2={}
 Keys2[8]='Back'
@@ -120,9 +122,8 @@ Keys2[222]="'"
 
 org_txtKey= _G.scriptConfig._txtKey
 _G.scriptConfig._txtKey= function(self,key)
-	  if allowCH then
-        return Keys2[key]
-       else
+	    return Keys2[key]
+end
+else
        	return key
-   end
 end
