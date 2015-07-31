@@ -1,4 +1,4 @@
-Enter file contents herefunction OnLoad()
+function OnLoad()
  PrintChat("AB-AMY:단축키설정이 완료되었습니다. 쉬프트를 눌러 확인해주세요")
 end
 
