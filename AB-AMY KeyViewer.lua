@@ -6,8 +6,6 @@ function OnLoad()
  menu:addParam("allowCH", "Allow change Display Hotkey", SCRIPT_PARAM_ONOFF, true)
 end
 
- if allowCH then
-
 Keys2={}
 Keys2[8]='Back'
 Keys2[9]='Tab'
@@ -122,8 +120,9 @@ Keys2[222]="'"
 
 org_txtKey= _G.scriptConfig._txtKey
 _G.scriptConfig._txtKey= function(self,key)
-	    return Keys2[key]
-end
-else
-       	return key
+if allowCH then
+	return Keys2[key]
+    else
+    	return
+    end
 end
